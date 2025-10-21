@@ -9,8 +9,8 @@ import streamlit as st
 import pickle
 import numpy as np
 
-with open('Model_saving.pkl','rb') as file:
-   model=pickle.load(file)
+# open('Model_saving.pkl','rb') as file:
+  # model=pickle.load(file)
    loaded_model=pickle.load(open("model_saving.pkl","rb"))
 
 st.title("Airport Cargo price prediction")
@@ -32,6 +32,7 @@ if st.button("Predict"):
     Input=np.array([[dist,area,size,weight]])
     pred=model.predict(Input)
     st.success(f'Price will be: {pred[0]:.2f} $')
+
 
 
 
